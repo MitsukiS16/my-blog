@@ -1,5 +1,67 @@
 import Link from "next/link";
 
+const works = [
+  {
+    id: 1,
+    href: "/proj-1",
+    name: "proj 1",
+    imageSrc:
+      "https://www.adorama.com/alc/wp-content/uploads/2021/04/photography-camera-learning-feature.jpg",
+    description: "ola proj 1 done in 2000",
+    altText: "proj 1",
+  },
+  {
+    id: 2,
+    href: "/proj-2",
+    name: "proj 2",
+    imageSrc:
+      "https://www.adorama.com/alc/wp-content/uploads/2021/04/photography-camera-learning-feature.jpg",
+    description: "ola proj 2 done in 2000",
+    altText: "proj 2",
+  },
+  {
+    id: 3,
+    href: "/proj-3",
+    name: "proj 3",
+    imageSrc:
+      "https://www.adorama.com/alc/wp-content/uploads/2021/04/photography-camera-learning-feature.jpg",
+    description: "ola proj 3 done in 2000",
+    altText: "proj 3",
+  },
+  {
+    id: 4,
+    href: "/proj-4",
+    name: "proj 19",
+    imageSrc:
+      "https://www.adorama.com/alc/wp-content/uploads/2021/04/photography-camera-learning-feature.jpg",
+    description: "ola proj 4 done in 2000",
+    altText: "proj 4",
+  },
+];
+
+const generateWork = (
+  id: number,
+  href: string,
+  name: string,
+  imageSrc: string,
+  description: string,
+  altText: string
+): JSX.Element => (
+  <div key={id} className="w-full md:w-1/3 px-4 mb-4">
+    <div className="bg-inherit">
+      <img
+          src={imageSrc}
+          alt={altText}
+          className="w-full h-auto object-cover"
+        />
+      <div className="pt-2 pb-2 text-left">
+        <p className="font-mono text-md uppercase">{name}</p>
+        <p className="font-mono text-md text-gray-600 uppercase">{description}</p>
+      </div>
+    </div>
+  </div>
+);
+
 type MenuItemProps = {
   href: string;
   text: string | null;
@@ -112,7 +174,7 @@ const WorldMap = () => (
     </h1>
     <div className="flex justify-center items-center">
       <img
-        src="/download.png"
+        src="https://img.pixers.pics/pho_wat(s3:700/FO/57/03/76/70/700_FO57037670_7ba8bdad13ef5770231c4a9942969340.jpg,700,459,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,409,jpg)/murais-de-parede-black-silhouette-isolated-world-map-eps10-vector-file.jpg.jpg"
         alt="World Map"
         className="max-w-full h-auto rounded-lg"
       />
@@ -136,6 +198,73 @@ const Grid = () => {
   return <></>;
 };
 
+const Work = () => (
+  <section className="p-8 text-center">
+    <h1 className="font-mono text-4xl font-bold mb-4 uppercase relative inline-block">
+      <span className="absolute w-full h-4 bg-white top-1/2 transform -translate-y-0.3s"></span>
+      <span className="relative z-10">Projects</span>
+    </h1>
+    <br />
+    <div className="flex flex-wrap justify-center">
+      {works.map((work) =>
+        generateWork(
+          work.id,
+          work.href,
+          work.name,
+          work.imageSrc,
+          work.description,
+          work.altText
+        )
+      )}
+      <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
+        <div className="bg-gray-100 p-4 rounded-md">
+          <a href="/work">
+            <button>See more albums</button>
+          </a>
+          <p className="text-lg font-medium">See more</p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const AboutMe = () => (
+  <section className="p-8 text-center">
+    <h1 className="font-mono text-4xl font-bold mb-4 uppercase relative inline-block">
+      <span className="absolute w-full h-4 bg-white top-1/2 transform -translate-y-0.3s"></span>
+      <span className="relative z-10">About Me</span>
+    </h1>
+    <div className="flex justify-center items-center">
+      <img
+        src="https://media.licdn.com/dms/image/D4D03AQHdTSzEHO5PWQ/profile-displayphoto-shrink_800_800/0/1684400804869?e=1717027200&v=beta&t=6RDDmZ-tGuLaFDDx6oXuFrwFLZjg5hsKfHhh1sbnss8"
+        alt="World Map"
+        className="max-w-full h-auto rounded-lg"
+      />
+      <p>I am a passionate FullStack Developer from Porto, Portugal. I have experience in various programming languages like Java, C/C++, and HTML/CSS. My goal is to constantly improve my skills and expand my knowledge in this field. <br></br><br></br>As a Developer, I find great joy in creating code that is not only elegant but also efficient. It brings me a sense of accomplishment and satisfaction when I can produce clean and well-designed solutions that not only look visually appealing but also provide seamless functionality. <br></br><br></br>When I'm not coding or designing, I enjoy practicing judo or painting.</p>
+    </div>
+  </section>
+);
+
+const FindMe = () => (
+  <section className="p-8 text-center">
+    <h1 className="font-mono text-4xl font-bold mb-4 uppercase relative inline-block">
+      <span className="absolute w-full h-4 bg-white top-1/2 transform -translate-y-0.3s"></span>
+      <span className="relative z-10">Find me</span>
+    </h1>
+    <div className="items-center">
+      <p>Lets create something together.</p>
+      <div>
+        <p><span className="font-bold"> Email:</span> clarissemtcarvalho@gmail.com</p>
+        <p><span className="font-bold"> Phone:</span> (+351) 917 090 276</p>
+        <p><span className="font-bold"> Instagram:</span> @sissi_maria01</p>
+        <p><span className="font-bold"> LinkedIn:</span> /clarissemaria</p>
+        <p><span className="font-bold"> Address:</span> Porto, Portugal</p>
+
+      </div>
+    </div>
+  </section>
+);
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col relative bg-pink-100 text-black">
@@ -143,12 +272,11 @@ export default function Home() {
       {/* <Header /> */}
 
       <main className="flex-grow px-8 md:px-12 lg:px-40 xl:px-24 3xl:px-40">
-        <Link href="/mydiary">my diary</Link>
-
-        <p>olaa sissi</p>
-        {/* <Grid /> */}
-
-        {/* <WorldMap /> */}
+        <Link href="/mydiary">my diary</Link>        
+        <AboutMe/>
+        <Work/>
+        <WorldMap/>
+        <FindMe/> 
       </main>
 
       <Footer />

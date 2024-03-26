@@ -9,9 +9,14 @@ interface HeaderSubPagesProps {
 
 const HeaderSubPages: React.FC<HeaderSubPagesProps> = ({ text, idpage }) => {
   return (
-    <header className="bg-gray-800 text-white p-4">
-      <h1 className="text-2xl font-bold">{text}</h1>
-      <p className="text-sm">Page ID: {idpage}</p>
+    <header className="text-2xl font-bold text-black p-4 flex justify-start items-center">
+      <a href="/">
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/1946/1946436.png"
+          alt="Home Icon"
+          className="w-6 h-6"
+        />
+      </a>
     </header>
   );
 };
