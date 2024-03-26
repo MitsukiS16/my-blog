@@ -21,19 +21,19 @@ const MenuItem = ({ href, text, iconSrc, altText }: MenuItemProps) => (
 );
 
 const Navigation = () => (
-  <nav className="justify-center items-center m-3 sticky top-0 z-50 mx-auto p-1 bg-gray-300 rounded-3xl">
+  <nav className="justify-center items-center m-3 sticky top-0 z-50 mx-auto p-1 bg-white rounded-3xl">
     <ul className="flex flex-col md:flex-row items-center justify-between uppercase lg:px-4 md:px-2 sm:px-1">
       <MenuItem
-        href="/mydiary"
-        text="My Diary"
+        href="/about"
+        text="About"
         iconSrc={null}
-        altText="mydiary"
+        altText="about"
       />
       <MenuItem
-        href="/mytravel"
-        text="Travel"
+        href="/work"
+        text="Work"
         iconSrc={null}
-        altText="travel"
+        altText="work"
       />
       <MenuItem
         href="/"
@@ -42,16 +42,16 @@ const Navigation = () => (
         altText="Home"
       />
       <MenuItem
+        href="/blog"
+        text="Blog"
+        iconSrc={null}
+        altText="blog"
+      />
+      <MenuItem
         href="/mygallery"
         text="Gallery"
         iconSrc={null}
         altText="gallery"
-      />
-      <MenuItem
-        href="/mycinema"
-        text="Cinema"
-        iconSrc={null}
-        altText="cinema"
       />
     </ul>
   </nav>
@@ -100,7 +100,7 @@ const Footer = () => (
       </a>
       {/* Add more social media icons and links as needed */}
     </section>
-    <p>&copy; 2023 Clarisse Carvalho Blog</p>
+    <p>&copy; 2024 Clarisse Carvalho Portfolio</p>
   </footer>
 );
 

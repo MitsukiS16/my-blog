@@ -1,4 +1,4 @@
-import HeaderSubPages from "../headersubpges";
+import HeaderSubPages from "../headersubpages";
 
 const albums = [
   {
